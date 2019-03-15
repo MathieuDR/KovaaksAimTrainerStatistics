@@ -10,6 +10,7 @@
 using System.Linq;
 using KovaaksAimTrainerCSVReader.Models;
 using KovaaksAimTrainerCSVReader.Models.Enum;
+using KovaaksAimTrainerCSVReader.Models.Parsing;
 
 namespace KovaaksAimTrainerCSVReader.Logic.Transformers{
     public class MapToSessionTransformer{

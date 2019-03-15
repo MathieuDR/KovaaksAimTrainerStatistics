@@ -5,7 +5,7 @@
 // MODIFIED BY:    (Mathieu)
 #endregion
 
-namespace KovaaksAimTrainerCSVReader.Models{
+namespace KovaaksAimTrainerCSVReader.Models.Parsing{
     public class SettingInfo{
         public int InputLag{ get; set; }
         public double MaxFPS{ get; set; }

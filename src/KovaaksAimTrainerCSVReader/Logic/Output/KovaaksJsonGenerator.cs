@@ -8,22 +8,23 @@
 using System;
 using System.IO;
 using KovaaksAimTrainerCSVReader.Models.output;
+using KovaaksAimTrainerCSVReader.Models.output.Chart_Js;
 using Newtonsoft.Json;
 
 namespace KovaaksAimTrainerCSVReader.Logic.Output{
     internal class KovaaksJsonGenerator{
         private readonly string _outputDirectory;
         private readonly string _outputFile;
-        private readonly Data _data;
+        private readonly ChartJSData _chartJsData;
 
-        public KovaaksJsonGenerator(string outputDirectory, string outputFile, Data data){
+        public KovaaksJsonGenerator(string outputDirectory, string outputFile, ChartJSData chartJsData){
             _outputDirectory = outputDirectory;
             _outputFile = outputFile;
-            _data = data;
+            _chartJsData = chartJsData;
         }
 
         public string Generate(){
-            string json = JsonConvert.SerializeObject(_data);
+            string json = JsonConvert.SerializeObject(_chartJsData);
 
             var file = $@"var data = {json}";
             var path = Path.Combine(_outputDirectory,_outputFile);

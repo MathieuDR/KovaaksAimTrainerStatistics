@@ -7,7 +7,7 @@
 
 using System;
 
-namespace KovaaksAimTrainerCSVReader.Models{
+namespace KovaaksAimTrainerCSVReader.Models.Parsing{
     public class SummaryInfo{
         public int Kills{ get; set; }
         public int Deaths{ get; set; }

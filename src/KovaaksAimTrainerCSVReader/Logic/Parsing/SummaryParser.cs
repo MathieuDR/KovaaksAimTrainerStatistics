@@ -11,9 +11,9 @@ using System;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using KovaaksAimTrainerCSVReader.Models;
+using KovaaksAimTrainerCSVReader.Models.Parsing;
 
-namespace KovaaksAimTrainerCSVReader.Logic{
+namespace KovaaksAimTrainerCSVReader.Logic.Parsing{
     public class SummaryParser{
         public static SummaryInfo Parse(FileInfo file, string rawInfo){
             Console.WriteLine($"Reading Summary Info of {file.Name}");

@@ -13,9 +13,9 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using CsvHelper;
-using KovaaksAimTrainerCSVReader.Models;
+using KovaaksAimTrainerCSVReader.Models.Parsing;
 
-namespace KovaaksAimTrainerCSVReader.Logic{
+namespace KovaaksAimTrainerCSVReader.Logic.Parsing{
     public class WeaponParser{
         public static List<WeaponInfo> Parse(FileInfo file, string rawInfo){
             // TODO CAN MAKE THIS GENERIC

@@ -13,9 +13,11 @@ using System.Diagnostics;
 using System.IO;
 using KovaaksAimTrainerCSVReader.Logic;
 using KovaaksAimTrainerCSVReader.Logic.Output;
+using KovaaksAimTrainerCSVReader.Logic.Parsing;
 using KovaaksAimTrainerCSVReader.Logic.Statistics;
 using KovaaksAimTrainerCSVReader.Models;
 using KovaaksAimTrainerCSVReader.Models.output;
+using KovaaksAimTrainerCSVReader.Models.output.Chart_Js;
 using KovaaksAimTrainerCSVReader.Settings;
 
 namespace KovaaksAimTrainerCSVReader{
@@ -31,7 +33,7 @@ namespace KovaaksAimTrainerCSVReader{
                 generator.CreateScoreChart();
 
                 // Parse to file
-                Data output = generator.GetOutput();
+                ChartJSData output = generator.GetOutput();
                 KovaaksJsonGenerator jsonGenerator = new KovaaksJsonGenerator(Config.OutputDirectory(), Config.OutputFileName, output);
                 jsonGenerator.Generate();
 

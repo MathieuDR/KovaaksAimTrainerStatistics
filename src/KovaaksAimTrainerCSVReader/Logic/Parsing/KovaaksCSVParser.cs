@@ -12,9 +12,10 @@ using System.Collections.Generic;
 using System.IO;
 using KovaaksAimTrainerCSVReader.Logic.Transformers;
 using KovaaksAimTrainerCSVReader.Models;
+using KovaaksAimTrainerCSVReader.Models.Parsing;
 using KovaaksAimTrainerCSVReader.Settings;
 
-namespace KovaaksAimTrainerCSVReader.Logic{
+namespace KovaaksAimTrainerCSVReader.Logic.Parsing{
     public class KovaaksCSVParser{
         private readonly string _path;
         private readonly MapToSessionTransformer _transformer;

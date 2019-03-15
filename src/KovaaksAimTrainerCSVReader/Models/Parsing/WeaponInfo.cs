@@ -7,7 +7,7 @@
 
 using CsvHelper.Configuration.Attributes;
 
-namespace KovaaksAimTrainerCSVReader.Models{
+namespace KovaaksAimTrainerCSVReader.Models.Parsing{
     public class WeaponInfo{
         [Name("Weapon")]
         public string Weapon{ get; set; }

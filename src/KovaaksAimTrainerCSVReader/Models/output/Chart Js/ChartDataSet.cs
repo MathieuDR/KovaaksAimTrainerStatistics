@@ -5,19 +5,26 @@
 // MODIFIED BY:    (Mathieu)
 #endregion
 
+using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace KovaaksAimTrainerCSVReader.Models.output{
-    public class ChartDataSet{
-        public ChartDataSet(string label, List<double?> data){
+namespace KovaaksAimTrainerCSVReader.Models.output.Chart_Js{
+    public class ChartDataSet<T> where T : struct
+    {
+        public ChartDataSet(string label, List<Metadata<T>> data){
             Label = label;
             Data = data;
+        }
+
+        public ChartDataSet(string label, List<T?> data){
+            Label = label;
+            Data = data.ToMetaDataList();
         }
 
         [JsonProperty("label")]
         public string Label{ get;  }
         [JsonProperty("data")]
-        public List<double?> Data{ get; }
+        public List<Metadata<T>> Data{ get; }
     }
 }

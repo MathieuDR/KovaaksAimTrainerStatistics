@@ -12,10 +12,11 @@ using System.Collections.Generic;
 using System.Linq;
 using KovaaksAimTrainerCSVReader.Models;
 using KovaaksAimTrainerCSVReader.Models.output;
+using KovaaksAimTrainerCSVReader.Models.output.Chart_Js;
 
 namespace KovaaksAimTrainerCSVReader.Logic.Statistics{
     public class StatisticGenerator{
-        private readonly Data _output;
+        private readonly ChartJSData _output;
 
         private readonly Dictionary<DateTime, List<Session>> _sessionPerDates;
         private readonly List<Session> _sessions;
@@ -32,7 +33,7 @@ namespace KovaaksAimTrainerCSVReader.Logic.Statistics{
 
             // Use all if we allow cheated.
             _sessions = allowCheated ? sessions : sessions.Where(s => s.ShouldCountStats).ToList();
-            _output = new Data(_sessions);
+            _output = new ChartJSData(_sessions);
         }
 
         public List<string> AllDatesLabels{
@@ -61,10 +62,10 @@ namespace KovaaksAimTrainerCSVReader.Logic.Statistics{
 
         public void CreateScoreChart(){
             Console.WriteLine($"Creating score chart");
-            Graph graph = new Graph("Score Chart", AllDatesLabels);
+            var chartJs = new ChartJS<double>("Score Chart", AllDatesLabels);
 
             foreach (string map in MapList){
-                List<double?> data = new List<double?>();
+                var data = new List<double?>();
                 foreach (DateTime date in AllDates){
                     var sessionOnDate = GetSessionPerDate(date);
                     
@@ -80,16 +81,16 @@ namespace KovaaksAimTrainerCSVReader.Logic.Statistics{
                     data.Add(average);
                 }
 
-                graph.ChartData.ChartDataSets.Add(new ChartDataSet(map, data));
+                chartJs.AddDataSet(map, data);
             }
 
 
-            _output.Graphs.Add(graph);
+            _output.Graphs.Add(chartJs);
         }
 
         public void CreateSessionsPerDayChart(){ }
 
-        public Data GetOutput(){
+        public ChartJSData GetOutput(){
             return _output;
         }
 

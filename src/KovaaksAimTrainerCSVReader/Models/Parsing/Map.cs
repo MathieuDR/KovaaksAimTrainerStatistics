@@ -13,7 +13,7 @@ using System.Globalization;
 using System.Linq;
 using KovaaksAimTrainerCSVReader.Settings;
 
-namespace KovaaksAimTrainerCSVReader.Models{
+namespace KovaaksAimTrainerCSVReader.Models.Parsing{
     public class Map{
         public string Name{ get; set; }
         public TimeSpan Duration{ get; set; }

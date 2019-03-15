@@ -9,17 +9,18 @@ using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace KovaaksAimTrainerCSVReader.Models.output{
-    public class ChartData{
+namespace KovaaksAimTrainerCSVReader.Models.output.Chart_Js{
+    public class ChartData<T> where T : struct
+    {
         public ChartData(List<String> labels){
             Labels = labels;
-            ChartDataSets = new List<ChartDataSet>();
+            ChartDataSets = new List<ChartDataSet<T>>();
         }
 
         [JsonProperty("labels")]
         public List<String> Labels{ get; }
 
         [JsonProperty("datasets")]
-        public List<ChartDataSet> ChartDataSets{ get; }
+        public List<ChartDataSet<T>> ChartDataSets{ get; }
     }
 }

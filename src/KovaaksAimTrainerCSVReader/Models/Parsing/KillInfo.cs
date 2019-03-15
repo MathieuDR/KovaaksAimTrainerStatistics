@@ -12,7 +12,7 @@ using System.Globalization;
 using CsvHelper.Configuration.Attributes;
 using KovaaksAimTrainerCSVReader.Settings;
 
-namespace KovaaksAimTrainerCSVReader.Models{
+namespace KovaaksAimTrainerCSVReader.Models.Parsing{
     public class KillInfo{
         [Name("Kill #")]
         public int Id{ get; set; }
