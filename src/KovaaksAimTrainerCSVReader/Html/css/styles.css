@@ -1,0 +1,15 @@
+body {
+    width: 100%;
+}
+
+.divider{
+    margin:50px 2% 20px;    
+    height: 2px;
+    width:96%;
+    background-color:gray;
+}
+
+#canvasses {
+    width: 80%;
+    margin: 0 auto;
+}
