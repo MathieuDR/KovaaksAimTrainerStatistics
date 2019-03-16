@@ -1,21 +1,21 @@
 ﻿#region HEADER
+
 // FILE:          KovaaksAimTrainerCSVReader - KovaaksAimTrainerCSVReader - KovaaksJsonGenerator.cs
-// CREATED:       // ()
-// MODIFIED:      14/03/2019 (22:01)
+// CREATED:       15/03/2019 (19:58)
+// MODIFIED:      16/03/2019 (01:37)
 // MODIFIED BY:    (Mathieu)
+
 #endregion
 
-using System;
 using System.IO;
-using KovaaksAimTrainerCSVReader.Models.output;
 using KovaaksAimTrainerCSVReader.Models.output.Chart_Js;
 using Newtonsoft.Json;
 
 namespace KovaaksAimTrainerCSVReader.Logic.Output{
     internal class KovaaksJsonGenerator{
+        private readonly ChartJsData _chartJsData;
         private readonly string _outputDirectory;
         private readonly string _outputFile;
-        private readonly ChartJsData _chartJsData;
 
         public KovaaksJsonGenerator(string outputDirectory, string outputFile, ChartJsData chartJsData){
             _outputDirectory = outputDirectory;
@@ -27,7 +27,7 @@ namespace KovaaksAimTrainerCSVReader.Logic.Output{
             string json = JsonConvert.SerializeObject(_chartJsData);
 
             var file = $@"var data = {json}";
-            var path = Path.Combine(_outputDirectory,_outputFile);
+            var path = Path.Combine(_outputDirectory, _outputFile);
 
             using (StreamWriter writer = new StreamWriter(path, false)){
                 writer.WriteLine(file);

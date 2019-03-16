@@ -1,8 +1,8 @@
 ﻿#region HEADER
 
 // FILE:          KovaaksAimTrainerCSVReader - KovaaksAimTrainerCSVReader - StatisticGenerator.cs
-// CREATED:       14/03/2019 (20:11)
-// MODIFIED:      14/03/2019 (22:22)
+// CREATED:       15/03/2019 (19:58)
+// MODIFIED:      16/03/2019 (01:37)
 // MODIFIED BY:    (Mathieu)
 
 #endregion
@@ -11,7 +11,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using KovaaksAimTrainerCSVReader.Models;
-using KovaaksAimTrainerCSVReader.Models.output;
 using KovaaksAimTrainerCSVReader.Models.output.Chart_Js;
 
 namespace KovaaksAimTrainerCSVReader.Logic.Statistics{
@@ -68,7 +67,7 @@ namespace KovaaksAimTrainerCSVReader.Logic.Statistics{
                 var data = new List<double?>();
                 foreach (DateTime date in AllDates){
                     var sessionOnDate = GetSessionPerDate(date);
-                    
+
                     var mapSessions = sessionOnDate.Where(s => s.Name == map).ToList();
 
                     if (!mapSessions.Any()){
@@ -81,7 +80,7 @@ namespace KovaaksAimTrainerCSVReader.Logic.Statistics{
                     data.Add(average);
                 }
 
-                chartJs.AddDataSet<double>(map, data);
+                chartJs.AddDataSet(map, data);
             }
 
 
