@@ -14,6 +14,7 @@ using System.IO;
 using KovaaksAimTrainerCSVReader.Business.Output;
 using KovaaksAimTrainerCSVReader.Business.Parsing;
 using KovaaksAimTrainerCSVReader.Business.Statistics;
+using KovaaksAimTrainerCSVReader.Business.Transformers;
 using KovaaksAimTrainerCSVReader.Models;
 using KovaaksAimTrainerCSVReader.Models.output.Chart_Js;
 using KovaaksAimTrainerCSVReader.Settings;
