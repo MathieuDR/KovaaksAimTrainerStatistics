@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using KovaaksAimTrainerCSVReader.Models;
+using KovaaksAimTrainerCSVReader.Models.Enum;
 using KovaaksAimTrainerCSVReader.Models.output;
 using KovaaksAimTrainerCSVReader.Models.output.Chart_Js;
 
@@ -62,7 +63,7 @@ namespace KovaaksAimTrainerCSVReader.Business.Statistics{
 
         public void CreateScoreChart(){
             Console.WriteLine($"Creating score chart");
-            var chartJs = new Chart("Score Chart", AllDatesLabels);
+            Chart chart = new Chart(ChartType.StandardLine, "Average Scores");
 
             foreach (string map in MapList){
                 var data = new List<double?>();
@@ -81,16 +82,16 @@ namespace KovaaksAimTrainerCSVReader.Business.Statistics{
                     data.Add(average);
                 }
 
-                chartJs.AddDataSet(map, data);
+                chart.AddChartSerie(map, data);
             }
 
 
-            _output.AddChart(chartJs);
+            _output.AddChart(chart);
         }
 
         public void CreateSessionsPerDayChart(){ }
 
-        public ChartJsData GetOutput(){
+        public ChartCollection GetOutput(){
             return _output;
         }
 

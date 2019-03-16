@@ -13,8 +13,8 @@ using KovaaksAimTrainerCSVReader.Models.Enum;
 using KovaaksAimTrainerCSVReader.Models.Parsing;
 
 namespace KovaaksAimTrainerCSVReader.Business.Transformers{
-    public class MapToSessionTransformer{
-        public Session TransformTo(Map map){
+    public static class MapToSessionTransformer{
+        public static Session TransformToSession(this Map map){
             Session session = new Session();
 
             session.Score = map.SummaryInfo.Score;

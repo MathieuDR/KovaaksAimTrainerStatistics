@@ -12,8 +12,8 @@ using KovaaksAimTrainerCSVReader.Models.output;
 using KovaaksAimTrainerCSVReader.Models.output.Chart_Js;
 
 namespace KovaaksAimTrainerCSVReader.Business.Transformers{
-    public class ChartToChartJsTransformer{
-        public ChartJs TransformTo(Chart chart){
+    public static class ChartToChartJsTransformer{
+        public static ChartJs TransformToGraphJs(Chart chart){
             throw new NotImplementedException();
         }
     }

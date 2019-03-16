@@ -1,8 +1,8 @@
 ﻿#region HEADER
 
-// FILE:          KovaaksAimTrainerCSVReader - KovaaksAimTrainerCSVReader - KovaaksJsonGenerator.cs
+// FILE:          KovaaksAimTrainerCSVReader - KovaaksAimTrainerCSVReader - ChartJsJsonGenerator.cs
 // CREATED:       15/03/2019 (19:58)
-// MODIFIED:      16/03/2019 (14:11)
+// MODIFIED:      16/03/2019 (14:29)
 // MODIFIED BY:    (Mathieu)
 
 #endregion
@@ -12,12 +12,12 @@ using KovaaksAimTrainerCSVReader.Models.output.Chart_Js;
 using Newtonsoft.Json;
 
 namespace KovaaksAimTrainerCSVReader.Business.Output{
-    internal class KovaaksJsonGenerator{
+    internal class ChartJsJsonGenerator{
         private readonly ChartJsData _chartJsData;
         private readonly string _outputDirectory;
         private readonly string _outputFile;
 
-        public KovaaksJsonGenerator(string outputDirectory, string outputFile, ChartJsData chartJsData){
+        public ChartJsJsonGenerator(string outputDirectory, string outputFile, ChartJsData chartJsData){
             _outputDirectory = outputDirectory;
             _outputFile = outputFile;
             _chartJsData = chartJsData;

@@ -12,8 +12,8 @@ using KovaaksAimTrainerCSVReader.Models.output;
 using KovaaksAimTrainerCSVReader.Models.output.HighChart;
 
 namespace KovaaksAimTrainerCSVReader.Business.Transformers{
-    public class ChartToHighChartTransformer{
-        public HighChart<T> TransformTo<T>(Chart chart) where T : struct{
+    public static class ChartToHighChartTransformer{
+        public static HighChart TransformToHighChart(Chart chart){
             throw new NotImplementedException();
         }
     }

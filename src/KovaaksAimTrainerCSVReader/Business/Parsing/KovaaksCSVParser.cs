@@ -18,11 +18,10 @@ using KovaaksAimTrainerCSVReader.Settings;
 namespace KovaaksAimTrainerCSVReader.Business.Parsing{
     public class KovaaksCSVParser{
         private readonly string _path;
-        private readonly MapToSessionTransformer _transformer;
+       
 
         public KovaaksCSVParser(string path){
             _path = path;
-            _transformer = new MapToSessionTransformer();
         }
 
         public List<Map> ParseToMaps(){
@@ -34,7 +33,7 @@ namespace KovaaksAimTrainerCSVReader.Business.Parsing{
             var sessions = new List<Session>();
 
             foreach (Map map in maps){
-                sessions.Add(_transformer.TransformTo(map));
+                sessions.Add(map.TransformToSession());
             }
 
             return sessions;

@@ -31,8 +31,4 @@
     </None>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Logic\NewFolder\" />
-  </ItemGroup>
-
 </Project>

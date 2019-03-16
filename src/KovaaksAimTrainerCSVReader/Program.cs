@@ -31,8 +31,8 @@ namespace KovaaksAimTrainerCSVReader{
                 generator.CreateScoreChart();
 
                 // Parse to file
-                ChartJsData output = generator.GetOutput();
-                KovaaksJsonGenerator jsonGenerator = new KovaaksJsonGenerator(Config.OutputDirectory(), Config.OutputFileName, output);
+                var output = generator.GetOutput();
+                ChartJsJsonGenerator jsonGenerator = new ChartJsJsonGenerator(Config.OutputDirectory(), Config.OutputFileName, output.TransformToGraphJs());
                 jsonGenerator.Generate();
 
                 // Start page
