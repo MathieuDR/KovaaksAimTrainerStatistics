@@ -16,7 +16,7 @@ using KovaaksAimTrainerCSVReader.Models.output.Chart_Js;
 
 namespace KovaaksAimTrainerCSVReader.Logic.Statistics{
     public class StatisticGenerator{
-        private readonly ChartJSData _output;
+        private readonly ChartJsData _output;
 
         private readonly Dictionary<DateTime, List<Session>> _sessionPerDates;
         private readonly List<Session> _sessions;
@@ -33,7 +33,7 @@ namespace KovaaksAimTrainerCSVReader.Logic.Statistics{
 
             // Use all if we allow cheated.
             _sessions = allowCheated ? sessions : sessions.Where(s => s.ShouldCountStats).ToList();
-            _output = new ChartJSData(_sessions);
+            _output = new ChartJsData(_sessions);
         }
 
         public List<string> AllDatesLabels{
@@ -62,7 +62,7 @@ namespace KovaaksAimTrainerCSVReader.Logic.Statistics{
 
         public void CreateScoreChart(){
             Console.WriteLine($"Creating score chart");
-            var chartJs = new ChartJS<double>("Score Chart", AllDatesLabels);
+            var chartJs = new ChartJs("Score Chart", AllDatesLabels);
 
             foreach (string map in MapList){
                 var data = new List<double?>();
@@ -81,7 +81,7 @@ namespace KovaaksAimTrainerCSVReader.Logic.Statistics{
                     data.Add(average);
                 }
 
-                chartJs.AddDataSet(map, data);
+                chartJs.AddDataSet<double>(map, data);
             }
 
 
@@ -90,7 +90,7 @@ namespace KovaaksAimTrainerCSVReader.Logic.Statistics{
 
         public void CreateSessionsPerDayChart(){ }
 
-        public ChartJSData GetOutput(){
+        public ChartJsData GetOutput(){
             return _output;
         }
 

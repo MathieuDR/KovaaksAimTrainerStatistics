@@ -15,9 +15,9 @@ namespace KovaaksAimTrainerCSVReader.Logic.Output{
     internal class KovaaksJsonGenerator{
         private readonly string _outputDirectory;
         private readonly string _outputFile;
-        private readonly ChartJSData _chartJsData;
+        private readonly ChartJsData _chartJsData;
 
-        public KovaaksJsonGenerator(string outputDirectory, string outputFile, ChartJSData chartJsData){
+        public KovaaksJsonGenerator(string outputDirectory, string outputFile, ChartJsData chartJsData){
             _outputDirectory = outputDirectory;
             _outputFile = outputFile;
             _chartJsData = chartJsData;

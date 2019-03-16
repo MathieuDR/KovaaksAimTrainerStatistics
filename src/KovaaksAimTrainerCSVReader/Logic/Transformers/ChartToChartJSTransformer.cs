@@ -11,10 +11,8 @@ using KovaaksAimTrainerCSVReader.Models.output.Chart_Js;
 
 namespace KovaaksAimTrainerCSVReader.Logic.Transformers{
     public class ChartToChartJSTransformer{
-        public ChartJS<T> TransformTo<T>(Chart<T> chart) where T: struct {
+        public ChartJs TransformTo(Chart chart) {
             throw new NotImplementedException();
-            ChartJS<T> result = new ChartJS<T>(null,null);
-            return result;
         }
     }
 }
