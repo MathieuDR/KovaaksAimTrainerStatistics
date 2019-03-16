@@ -1,8 +1,8 @@
 ﻿#region HEADER
 
 // FILE:          KovaaksAimTrainerCSVReader - KovaaksAimTrainerCSVReader - MapToSessionTransformer.cs
-// CREATED:       12/03/2019 (23:00)
-// MODIFIED:      12/03/2019 (23:14)
+// CREATED:       15/03/2019 (19:58)
+// MODIFIED:      16/03/2019 (14:10)
 // MODIFIED BY:    (Mathieu)
 
 #endregion
@@ -12,7 +12,7 @@ using KovaaksAimTrainerCSVReader.Models;
 using KovaaksAimTrainerCSVReader.Models.Enum;
 using KovaaksAimTrainerCSVReader.Models.Parsing;
 
-namespace KovaaksAimTrainerCSVReader.Logic.Transformers{
+namespace KovaaksAimTrainerCSVReader.Business.Transformers{
     public class MapToSessionTransformer{
         public Session TransformTo(Map map){
             Session session = new Session();
@@ -29,7 +29,7 @@ namespace KovaaksAimTrainerCSVReader.Logic.Transformers{
             // Add other types here in if else (Free Play?)
             if (map.IsChallenge){
                 session.sessionType = SessionType.Challenge;
-            } else{ 
+            } else{
                 session.sessionType = SessionType.Unknown;
             }
 

@@ -2,7 +2,7 @@
 
 // FILE:          KovaaksAimTrainerCSVReader - KovaaksAimTrainerCSVReader - KovaaksJsonGenerator.cs
 // CREATED:       15/03/2019 (19:58)
-// MODIFIED:      16/03/2019 (01:37)
+// MODIFIED:      16/03/2019 (14:11)
 // MODIFIED BY:    (Mathieu)
 
 #endregion
@@ -11,7 +11,7 @@ using System.IO;
 using KovaaksAimTrainerCSVReader.Models.output.Chart_Js;
 using Newtonsoft.Json;
 
-namespace KovaaksAimTrainerCSVReader.Logic.Output{
+namespace KovaaksAimTrainerCSVReader.Business.Output{
     internal class KovaaksJsonGenerator{
         private readonly ChartJsData _chartJsData;
         private readonly string _outputDirectory;

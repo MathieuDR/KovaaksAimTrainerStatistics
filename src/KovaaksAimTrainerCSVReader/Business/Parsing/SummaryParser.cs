@@ -1,8 +1,8 @@
 ﻿#region HEADER
 
 // FILE:          KovaaksAimTrainerCSVReader - KovaaksAimTrainerCSVReader - SummaryParser.cs
-// CREATED:       12/03/2019 (23:28)
-// MODIFIED:      12/03/2019 (23:34)
+// CREATED:       15/03/2019 (19:58)
+// MODIFIED:      16/03/2019 (14:11)
 // MODIFIED BY:    (Mathieu)
 
 #endregion
@@ -13,7 +13,7 @@ using System.IO;
 using System.Linq;
 using KovaaksAimTrainerCSVReader.Models.Parsing;
 
-namespace KovaaksAimTrainerCSVReader.Logic.Parsing{
+namespace KovaaksAimTrainerCSVReader.Business.Parsing{
     public class SummaryParser{
         public static SummaryInfo Parse(FileInfo file, string rawInfo){
             Console.WriteLine($"Reading Summary Info of {file.Name}");

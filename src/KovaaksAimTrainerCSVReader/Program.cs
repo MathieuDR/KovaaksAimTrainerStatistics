@@ -1,8 +1,8 @@
 ﻿#region HEADER
 
 // FILE:          KovaaksAimTrainerCSVReader - KovaaksAimTrainerCSVReader - Program.cs
-// CREATED:       11/03/2019 (20:11)
-// MODIFIED:      12/03/2019 (23:41)
+// CREATED:       15/03/2019 (19:58)
+// MODIFIED:      16/03/2019 (14:10)
 // MODIFIED BY:    (Mathieu)
 
 #endregion
@@ -11,12 +11,10 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using KovaaksAimTrainerCSVReader.Logic;
-using KovaaksAimTrainerCSVReader.Logic.Output;
-using KovaaksAimTrainerCSVReader.Logic.Parsing;
-using KovaaksAimTrainerCSVReader.Logic.Statistics;
+using KovaaksAimTrainerCSVReader.Business.Output;
+using KovaaksAimTrainerCSVReader.Business.Parsing;
+using KovaaksAimTrainerCSVReader.Business.Statistics;
 using KovaaksAimTrainerCSVReader.Models;
-using KovaaksAimTrainerCSVReader.Models.output;
 using KovaaksAimTrainerCSVReader.Models.output.Chart_Js;
 using KovaaksAimTrainerCSVReader.Settings;
 
@@ -39,7 +37,7 @@ namespace KovaaksAimTrainerCSVReader{
 
                 // Start page
                 var filePath = $@"{Path.Combine(Config.OutputDirectory(), Config.IndexPage)}";
-                using(var proc = Process.Start(@"cmd.exe ", $@"/c {filePath}")) { }
+                using (var proc = Process.Start(@"cmd.exe ", $@"/c {filePath}")){ }
             } catch (Exception e){
                 Console.WriteLine($"{e.Message}");
                 Console.WriteLine($"{e.StackTrace}");

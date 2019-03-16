@@ -1,8 +1,8 @@
 ﻿#region HEADER
 
 // FILE:          KovaaksAimTrainerCSVReader - KovaaksAimTrainerCSVReader - SettingParser.cs
-// CREATED:       12/03/2019 (23:28)
-// MODIFIED:      15/03/2019 (18:51)
+// CREATED:       15/03/2019 (19:58)
+// MODIFIED:      16/03/2019 (14:11)
 // MODIFIED BY:    (Mathieu)
 
 #endregion
@@ -13,7 +13,7 @@ using System.IO;
 using System.Linq;
 using KovaaksAimTrainerCSVReader.Models.Parsing;
 
-namespace KovaaksAimTrainerCSVReader.Logic.Parsing{
+namespace KovaaksAimTrainerCSVReader.Business.Parsing{
     public class SettingParser{
         public static SettingInfo Parse(FileInfo file, string rawInfo){
             Console.WriteLine($"Reading Settings Info of {file.Name}");

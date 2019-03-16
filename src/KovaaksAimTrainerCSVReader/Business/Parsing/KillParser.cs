@@ -2,7 +2,7 @@
 
 // FILE:          KovaaksAimTrainerCSVReader - KovaaksAimTrainerCSVReader - KillParser.cs
 // CREATED:       15/03/2019 (19:58)
-// MODIFIED:      16/03/2019 (01:37)
+// MODIFIED:      16/03/2019 (14:11)
 // MODIFIED BY:    (Mathieu)
 
 #endregion
@@ -15,7 +15,7 @@ using System.Linq;
 using CsvHelper;
 using KovaaksAimTrainerCSVReader.Models.Parsing;
 
-namespace KovaaksAimTrainerCSVReader.Logic.Parsing{
+namespace KovaaksAimTrainerCSVReader.Business.Parsing{
     public class KillParser{
         public static List<KillInfo> Parse(FileInfo file, string rawInfo){
             // TODO CAN MAKE THIS GENERIC
